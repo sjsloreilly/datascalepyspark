@@ -1,5 +1,7 @@
 ## Welcome to Data at Scale with Pyspark!  
-We're looking forward to the course. If you have any questions please contact us:
+We're looking forward to the course. If you have any questions please contact us:  
+Sahil Jhangiani: s.s.jhangiani@gmail.com  
+Sev Leonard: sev@thedatascout.com  
 
 
 ## Setup
