@@ -26,7 +26,7 @@ We’ll use this for storing files during the class.
 1. In the Find Services search box, type “S3” and select “S3 scalable storage in the cloud.”
 1. Click Create Bucket. 
     1. Name it “data-scale-oreilly-{your name}”  We will refer to this as your bucket name for the rest of the setup instructions.
-    1. Region: US East (Ohio)
+    1. Region: US East (N Virginia)
     1. Click Create
 1. Click on the bucket name and click “Create folder” to create the following folders. Leave the None (use bucket settings) radio button checked when creating the folders
     - emr-logs
@@ -38,11 +38,12 @@ We’ll use this for storing files during the class.
 
 1. Create a notebook cluster
 1. Go to https://console.aws.amazon.com/elasticmapreduce/
+1. In the upper right hand corner, ensure the N. Virginia region us-east-1 is selected.
 1. On the sidebar select Notebooks and Create Notebook.
 1. Notebook name: data-scale-oreilly-notebook
     1. Cluster: select Create a cluster
         - Cluster name: data-scale-oreilly-notebook-cluster
-    1. Notebook location: select Choose and existing S3 location in us-east-2 and enter s3://{your bucket name}/notebooks
+    1. Notebook location: select Choose and existing S3 location in us-east-1 and enter s3://{your bucket name}/notebooks
 1. Click Create Notebook.
 This will create a new cluster which we can terminate and customize for class.
 1. In the sidebar, select Clusters. You should see “data-scale-oreilly-notebook-cluster” in the cluster list. You may have to reload the page. Click on the cluster name to open the cluster detail view.
@@ -58,7 +59,7 @@ This will create a new cluster which we can terminate and customize for class.
         1. Set the EBS Storage to 128 GiB
 1. Click Next.
 1. Under General Options:
-    1. Change the logging S3 folder to “s3://<your bucket name>/emr-logs.”
+    1. Change the logging S3 folder to “s3://{your bucket name}/emr-logs.”
     1. Check the box by Debugging to enable.
 1. Click Next and then Create Cluster.
 The notebook will need to be associated with this new version of the cluster, so select Notebooks from the sidebar. The notebook you created should be stopped.
