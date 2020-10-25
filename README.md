@@ -27,7 +27,7 @@ We’ll use this for storing files during the class.
 1. Click Create Bucket. 
     1. Name it “data-scale-oreilly-{your name}”  We will refer to this as your bucket name for the rest of the setup instructions.
     1. Region: US East (N Virginia)
-    1. Click Create
+    1. Click the "Create" button in the lower left corner
 1. Click on the bucket name and click “Create folder” to create the following folders. Leave the None (use bucket settings) radio button checked when creating the folders
     - emr-logs
     - notebooks
@@ -36,18 +36,19 @@ We’ll use this for storing files during the class.
     1. Click the borough-zip-mapping folder to open it
     1. Click Upload and upload the ny-zip-codes.csv file from the github repo you cloned earlier.
 
-1. Create a notebook cluster
-1. Go to https://console.aws.amazon.com/elasticmapreduce/
+### Create a notebook cluster
+1. In the top left corner click "Services" 
+1. In the search box under "All Services" type "EMR" and select "EMR Managed Hadoop Framework" to navigate to the EMR console
 1. In the upper right hand corner, ensure the N. Virginia region us-east-1 is selected.
-1. On the sidebar select Notebooks and Create Notebook.
+1. On the left sidebar click Notebooks and Create Notebook.
 1. Notebook name: data-scale-oreilly-notebook
     1. Cluster: select Create a cluster
         - Cluster name: data-scale-oreilly-notebook-cluster
-    1. Notebook location: select Choose and existing S3 location in us-east-1 and enter s3://{your bucket name}/notebooks
+    1. Notebook location: select Choose an existing S3 location in us-east-1 and enter s3://{your bucket name}/notebooks
 1. Click Create Notebook.
 This will create a new cluster which we can terminate and customize for class.
 1. In the sidebar, select Clusters. You should see “data-scale-oreilly-notebook-cluster” in the cluster list. You may have to reload the page. Click on the cluster name to open the cluster detail view.
-1. Click Terminate and then Clone.
+1. Click Terminate and then Clone. It is OK to terminate the cluster while it is starting.
 1. For the dialog asking if you want to clone steps, select No.
 1. Click the Previous button on the lower right side of the cluster setup screen until you get back to Step 1: Software and Steps in the sidebar on the left side.
     1. Under Edit Software settings click the radio button for Enter configuration. Paste the following into the text area:
@@ -68,7 +69,7 @@ The notebook will need to be associated with this new version of the cluster, so
     1. Click Change cluster and Start Notebook.
 Once the notebook starts, the Open in JupyterLab button will be enabled. Click it to launch JupyterHub in a new tab.
 
-1. Upload course notebooks
+1. Upload course notebooks  
 In the JupyterLab UI launched in the previous step, you can upload the course notebooks from your local machine by clicking the Upload Files icon.  
 
 You cannot select a directory, but you can select all notebooks in the a directory for upload by holding down shift while clicking the files.
