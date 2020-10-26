@@ -7,6 +7,7 @@ import requests
 taxiPath = "hdfs:///tmp/data/emr/nyc-taxi/taxi-data/output/section2/json/"
 taxiLookupPath = "hdfs:///tmp/data/emr/nyc-taxi/zone-lookup/output/section2/json/"
 spark = None
+api_key = ""
 
 def write_sorted_parquet(inputDF): 
     (inputDF.orderBy('passenger_count', 'PULocationID', 'DOLocationID', 'trip_distance', 'fare_amount', 'tip_amount', 'tpep_dropoff_datetime', 'tpep_pickup_datetime')
@@ -56,7 +57,7 @@ def get_air_quality_df(zipDF):
             dateDelta = timedelta(days=d)
             endDate = startDate + dateDelta
             
-            apiPath = f"https://www.airnowapi.org/aq/observation/zipCode/historical/?format=application/json&zipCode={zipCode}&date={endDate}T00-0000&distance=100&API_KEY=8DFC7E6B-F641-41D9-95DC-9CF3B90AF038"
+            apiPath = f"https://www.airnowapi.org/aq/observation/zipCode/historical/?format=application/json&zipCode={zipCode}&date={endDate}T00-0000&distance=100&API_KEY={api_key}"
             request = requests.get(apiPath)
             requestDF = spark.createDataFrame(request.json())
             requestDF = requestDF.withColumn('zip', f.lit(zipCode))
