@@ -35,6 +35,7 @@ We’ll use this for storing files during the class.
 1. Under the data folder create another folder borough-zip-mapping
     1. Click the borough-zip-mapping folder to open it
     1. Click Upload and upload the ny-zip-codes.csv file from the github repo you cloned earlier.
+1. Under the notebooks folder upload the bootstrap.sh file from the github repo you cloned earlier.
 
 ### Create a notebook cluster
 1. In the top left corner click "Services" 
@@ -62,6 +63,12 @@ This will create a new cluster which we can terminate and customize for class.
 1. Under General Options:
     1. Change the logging S3 folder to “s3://{your bucket name}/emr-logs.”
     1. Check the box by Debugging to enable.
+    1. Further down the page, under Additional Options, expand the Bootstrap Actions section.  
+        a. Next to Add bootstrap action select Custom action from the drop down  
+        b. Click Configure and add  
+        c. Name the action "Install dependencies"  
+        d. For the Script location, enter "s3://{your buket name}/notebooks/bootstrap.sh"  
+        e. Click Add
 1. Click Next and then Create Cluster.
 The notebook will need to be associated with this new version of the cluster, so select Notebooks from the sidebar. The notebook you created should be stopped.
 1. Click on the name of the notebook to open the detail view. 
