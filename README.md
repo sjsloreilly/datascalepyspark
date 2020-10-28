@@ -67,7 +67,7 @@ This will create a new cluster which we can terminate and customize for class.
         a. Next to Add bootstrap action select Custom action from the drop down  
         b. Click Configure and add  
         c. Name the action "Install dependencies"  
-        d. For the Script location, enter "s3://{your buket name}/notebooks/bootstrap.sh"  
+        d. For the Script location, enter "s3://{your bucket name}/notebooks/bootstrap.sh"  
         e. Click Add
 1. Click Next and then Create Cluster.
 The notebook will need to be associated with this new version of the cluster, so select Notebooks from the sidebar. The notebook you created should be stopped.
