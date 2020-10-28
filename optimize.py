@@ -7,7 +7,7 @@ import requests
 taxiPath = "hdfs:///tmp/data/emr/nyc-taxi/taxi-data/output/section2/json/"
 taxiLookupPath = "hdfs:///tmp/data/emr/nyc-taxi/zone-lookup/output/section2/json/"
 spark = None
-api_key = ""
+api_key = "A4EFFAC5-0FDC-40B0-A7F1-9EC03755F4A1" # Sev's key
 
 def write_sorted_parquet(inputDF): 
     (inputDF.orderBy('passenger_count', 'PULocationID', 'DOLocationID', 'trip_distance', 'fare_amount', 'tip_amount', 'tpep_dropoff_datetime', 'tpep_pickup_datetime')
