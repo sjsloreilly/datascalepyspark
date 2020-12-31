@@ -27,8 +27,8 @@ We’ll use this for storing files during the class.
 1. Click Create Bucket. 
     1. Name it “data-scale-oreilly-{your name}”  We will refer to this as your bucket name for the rest of the setup instructions.
     1. Region: US East (N Virginia)
-    1. Click the "Create" button in the lower left corner
-1. Click on the bucket name and click “Create folder” to create the following folders. Leave the None (use bucket settings) radio button checked when creating the folders
+    1. Click the "Create" button in the lower right corner
+1. Click on the bucket name and click “Create folder” to create the following folders. Leave Server Side Encryption disabled
     - emr-logs
     - notebooks
     - data 
@@ -52,6 +52,7 @@ This will create a new cluster which we can terminate and customize for class.
 1. Click Terminate and then Clone. It is OK to terminate the cluster while it is starting.
 1. For the dialog asking if you want to clone steps, select No.
 1. Click the Previous button on the lower right side of the cluster setup screen until you get back to Step 1: Software and Steps in the sidebar on the left side.
+    1. Under Software Configuration change the Release to "emr-5.29.0"
     1. Under Edit Software settings click the radio button for Enter configuration. Paste the following into the text area:
 `[{"classification":"spark-defaults","properties":{"spark.driver.memory":"10G","spark.driver.maxResultSize":"5G"}}]`
 1. Click the Next button to Step 2: Hardware
